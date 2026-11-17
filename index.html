@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Archive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   
+<div class="sidebar radial-sidebar">
+
+    <h2 class="logo">MEMORY<span>_</span></h2>
+
+    <div class="radial-menu">
+
+        <button class="radial-toggle" id="radialToggle">
+            <span>✦</span>
+        </button>
+
+        <a href="#" class="radial-item item-1 nav-link active"
+           data-page="home" title="Dashboard">
+            ⌂
+        </a>
+
+        <a href="#" class="radial-item item-2 nav-link"
+           data-page="memories" title="Memories">
+            ▣
+        </a>
+
+        <a href="#" class="radial-item item-3 nav-link"
+           data-page="add" title="Add Memory">
+            ＋
+        </a>
+
+        <a href="#" class="radial-item item-4 nav-link"
+           data-page="gallery" title="Gallery">
+            ▧
+        </a>
+
+        <a href="#" class="radial-item item-5 nav-link"
+           data-page="calendar" title="Calendar">
+            ◷
+        </a>
+
+    </div>
+
+    <div class="sidebar-bottom">
+        <p>SYSTEM STATUS</p>
+        <span class="online">● SYSTEM ONLINE</span>
+        <small>MEMORY ARCHIVE</small>
+    </div>
+
+</div>
+
+
+    <main class="main-content">
+
+        <header>
+            <div>
+                <p class="top-label">PERSONAL DIGITAL SPACE</p>
+                <h2 id="page-title">Dashboard</h2>
+            </div>
+            <div class="date-box" id="today"></div>
+        </header>
+
+        <!-- HOME -->
+        <section id="home" class="page active-page">
+            <div class="hero">
+                <p class="neon-text">WELCOME TO YOUR MEMORY SPACE</p>
+                <h1>Every moment<br>has a <span>story.</span></h1>
+                <p class="hero-desc">
+                    Simpan setiap cerita, foto, dan momen kecil
+                    yang ingin kamu kenang selamanya.
+                </p>
+                <button onclick="showPage('add')">＋ Create Memory</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <p>TOTAL MEMORIES</p>
+                    <h2 id="total-memory">0</h2>
+                </div>
+                <div class="stat-card">
+                    <p>TOTAL PHOTOS</p>
+                    <h2 id="total-photo">0</h2>
+                </div>
+                <div class="stat-card">
+                    <p>LAST UPDATE</p>
+                    <h2 id="last-update">---</h2>
+                </div>
+            </div>
+
+            <div class="section-heading">
+                <h2>RECENT MEMORIES</h2>
+                <button class="text-button" onclick="showPage('memories')">
+                    View All →
+                </button>
+            </div>
+
+            <div id="recent-list" class="memory-grid"></div>
+        </section>
+
+        <!-- MEMORIES -->
+        <section id="memories" class="page">
+            <div class="section-heading">
+                <div>
+                    <p class="neon-text">YOUR PERSONAL COLLECTION</p>
+                    <h1>All Memories</h1>
+                </div>
+                <button onclick="showPage('add')">＋ New Memory</button>
+            </div>
+
+            <div id="memory-list" class="memory-grid"></div>
+        </section>
+
+        <!-- ADD MEMORY -->
+        <section id="add" class="page">
+            <div class="form-container">
+                <p class="neon-text">SAVE YOUR MOMENT</p>
+                <h1>Create New Memory</h1>
+
+                <form id="memory-form">
+                    <label>Memory Title</label>
+                    <input type="text" id="memory-title"
+                        placeholder="Contoh: Hari yang menyenangkan..." required>
+
+                    <label>Date</label>
+                    <input type="date" id="memory-date" required>
+
+                    <label>Category</label>
+                    <select id="memory-category">
+                        <option>Daily Life</option>
+                        <option>Friends</option>
+                        <option>Family</option>
+                        <option>Travel</option>
+                        <option>Special Moment</option>
+                    </select>
+
+                    <label>Your Story</label>
+                    <textarea id="memory-description"
+                        placeholder="Tuliskan cerita atau kenangan hari ini..."
+                        rows="6" required></textarea>
+
+                    <label>Upload Photo</label>
+                    <input type="file" id="memory-image" accept="image/*">
+
+                    <button type="submit">SAVE MEMORY ↗</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery" class="page">
+            <p class="neon-text">VISUAL COLLECTION</p>
+            <h1>Memory Gallery</h1>
+            <div id="gallery-list" class="gallery-grid"></div>
+        </section>
+
+        <!-- CALENDER -->
+        <section id="calendar" class="page">
+            <p class="neon-text">YOUR TIMELINE</p>
+            <h1>Memory Timeline</h1>
+            <div id="calendar-list" class="timeline"></div>
+        </section>
+
+        <footer>
+            <p>MEMORY ARCHIVE © 2026 — KEEP EVERY MOMENT ALIVE.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
